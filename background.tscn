@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://wlhh1h2fm363"]
+
+[ext_resource type="Texture2D" uid="uid://beibl3s1kajti" path="res://assets/pong background.png" id="1_oabld"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7s6n"]
+size = Vector2(20, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xehqc"]
+size = Vector2(15, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_splo0"]
+size = Vector2(1153, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eq6nc"]
+size = Vector2(1153, 50)
+
+[node name="Node2D" type="Node2D" unique_id=218570816]
+
+[node name="PongBackground" type="Sprite2D" parent="." unique_id=1734648095]
+texture_filter = 1
+position = Vector2(575.75, 322.74997)
+scale = Vector2(2.6864803, 2.1196718)
+texture = ExtResource("1_oabld")
+
+[node name="Player" type="StaticBody2D" parent="." unique_id=421993739]
+position = Vector2(50, 324)
+
+[node name="ColorRect" type="ColorRect" parent="Player" unique_id=800063248]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 20.0
+offset_bottom = 60.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=407719988]
+position = Vector2(10, 0)
+shape = SubResource("RectangleShape2D_i7s6n")
+
+[node name="CPU" type="StaticBody2D" parent="." unique_id=1429953948]
+position = Vector2(1082, 324)
+
+[node name="ColorRect" type="ColorRect" parent="CPU" unique_id=988490130]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 20.0
+offset_bottom = 60.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CPU" unique_id=580560859]
+position = Vector2(10, 0)
+shape = SubResource("RectangleShape2D_i7s6n")
+
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=1293064292]
+position = Vector2(522, 324)
+
+[node name="ColorRect" type="ColorRect" parent="Ball" unique_id=74593521]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1872116030]
+position = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_xehqc")
+
+[node name="Borders" type="StaticBody2D" parent="." unique_id=1259057614]
+
+[node name="Top" type="CollisionShape2D" parent="Borders" unique_id=1543056240]
+position = Vector2(575.5, -22.5)
+shape = SubResource("RectangleShape2D_splo0")
+
+[node name="Bottom" type="CollisionShape2D" parent="Borders" unique_id=1231257013]
+position = Vector2(575.5, 647)
+shape = SubResource("RectangleShape2D_eq6nc")
