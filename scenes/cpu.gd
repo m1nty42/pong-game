@@ -7,12 +7,12 @@ var win_height : int
 var p_height : int
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready() -> void:
 	win_height = get_viewport_rect().size.y
 	p_height = $ColorRect.get_size().y
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(delta: float) -> void:
 	#move paddle towards ball
 	ball_pos = $"../Ball".position
 	dist = position.y - ball_pos.y
@@ -26,3 +26,4 @@ func _process(delta):
 	
 	#limit paddle movement to window
 	position.y = clamp(position.y, p_height / 2, win_height - p_height / 2)
+	
